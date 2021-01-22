@@ -20,9 +20,27 @@ jobs:
       with:
         node-version: 12.x
     - run: npm ci
-    - run: npm run nx -- run-many --target build --all
-    - name: Deploy
+    - name: Set environment variables
+      run: echo "AFFECTED_PROJECTS=$(node tools/scripts/ci-get-affected-projects.js)" >> $GITHUB_ENV
+    - run: npm run affected:build -- --base origin/master --head HEAD
+    - name: Deploy App One
+      if: contains(env.AFFECTED_PROJECTS, 'app-one')
       uses: peaceiris/actions-gh-pages@v3
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
-        publish_dir: ./dist/apps
+        publish_dir: ./dist/apps/app-one
+        destination_dir: app-one
+    - name: Deploy App Two
+      if: contains(env.AFFECTED_PROJECTS, 'app-two')
+      uses: peaceiris/actions-gh-pages@v3
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        publish_dir: ./dist/apps/app-two
+        destination_dir: app-two
+    - name: Deploy Storybook
+      if: contains(env.AFFECTED_PROJECTS, 'storybook')
+      uses: peaceiris/actions-gh-pages@v3
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        publish_dir: ./dist/apps/storybook
+        destination_dir: storybook
