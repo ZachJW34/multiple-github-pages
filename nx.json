@@ -12,7 +12,8 @@
     "tsconfig.base.json": "*",
     "tslint.json": "*",
     ".eslintrc.json": "*",
-    "nx.json": "*"
+    "nx.json": "*",
+    ".github/workflows/node.js.yml": "*"
   },
   "tasksRunnerOptions": {
     "default": {

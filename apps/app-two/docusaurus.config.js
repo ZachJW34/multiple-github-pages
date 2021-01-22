@@ -1,8 +1,8 @@
 module.exports = {
   title: 'App Two',
   tagline: 'The tagline of my site',
-  url: 'https://zachjw34.github.io/multiple-github-pages',
-  baseUrl: '/app-two/',
+  url: 'https://zachjw34.github.io',
+  baseUrl: '/multiple-github-pages/app-two/',
   onBrokenLinks: 'throw',
   favicon: 'img/favicon.ico',
   organizationName: 'ZachJW34', // Usually your GitHub org/user name.
