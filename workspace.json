@@ -1,6 +1,45 @@
 {
   "version": 1,
-  "projects": {},
+  "projects": {
+    "app-one": {
+      "projectType": "application",
+      "root": "apps/app-one",
+      "sourceRoot": "apps/app-one/src",
+      "architect": {
+        "build": {
+          "builder": "@nx-plus/docusaurus:browser",
+          "options": {
+            "outputPath": "dist/apps/app-one"
+          }
+        },
+        "serve": {
+          "builder": "@nx-plus/docusaurus:dev-server",
+          "options": {
+            "port": 3000
+          }
+        }
+      }
+    },
+    "app-two": {
+      "projectType": "application",
+      "root": "apps/app-two",
+      "sourceRoot": "apps/app-two/src",
+      "architect": {
+        "build": {
+          "builder": "@nx-plus/docusaurus:browser",
+          "options": {
+            "outputPath": "dist/apps/app-two"
+          }
+        },
+        "serve": {
+          "builder": "@nx-plus/docusaurus:dev-server",
+          "options": {
+            "port": 3000
+          }
+        }
+      }
+    }
+  },
   "cli": {
     "defaultCollection": "@nrwl/workspace"
   }

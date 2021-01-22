@@ -26,17 +26,24 @@
     "help": "nx help"
   },
   "private": true,
-  "dependencies": {},
+  "dependencies": {
+    "@docusaurus/core": "^2.0.0-alpha.61",
+    "@docusaurus/preset-classic": "^2.0.0-alpha.61",
+    "clsx": "^1.1.1",
+    "react": "^16.8.4",
+    "react-dom": "^16.8.4"
+  },
   "devDependencies": {
-    "@nrwl/tao": "10.4.10",
     "@nrwl/cli": "10.4.10",
+    "@nrwl/tao": "10.4.10",
     "@nrwl/workspace": "10.4.10",
+    "@nx-plus/docusaurus": "^10.2.0",
     "@types/node": "~8.9.4",
     "dotenv": "6.2.0",
+    "eslint": "7.10.0",
+    "prettier": "2.1.2",
     "ts-node": "~7.0.0",
     "tslint": "~6.0.0",
-    "eslint": "7.10.0",
-    "typescript": "~4.0.3",
-    "prettier": "2.1.2"
+    "typescript": "~4.0.3"
   }
 }
